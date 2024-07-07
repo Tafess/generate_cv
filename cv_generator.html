@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="cv_generator.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg text-light fixed-top">
+      <div>
+        <a class="navbar-brand" href="#">GENERATE YOUR CV</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div></div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li>
+            <a href=""><h2>-------></h2></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#personal-info">Personal Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experiences">Experiences</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills-languages">Skills & Languages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about-me">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#references">References</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="generate-cv">Generate CV</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid justify-content-center">
+      <div id="images" class="images">
+        <!-- <img
+          src="https://cdn.vectorstock.com/i/1000x1000/16/83/avatar-woman-and-learning-online-concept-vector-28091683.webp"
+          alt=""
+        /> -->
+        <!-- <img src="/images/image2.jpg" alt="" /> -->
+        <!-- <img src="/images/image2.jpg" alt="" /> -->
+      </div>
+
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <form id="cvForm">
+            <div class="col-md">
+              <!-- Personal information fields -->
+              <label for="photo">Your Photo:<span>required</span></label>
+              <input
+                value="/images/man.webp"
+                type="file"
+                id="photo"
+                name="photo"
+                style="display: none"
+              />
+              <div id="photoPreview">
+                <img
+                  src="/images/man.webp"
+                  alt="Default Avatar"
+                  width="150"
+                  height="150"
+                />
+              </div>
+              <button
+                type="button"
+                onclick="document.getElementById('photo').click();"
+              >
+                Choose Photo
+              </button>
+
+              <!-- <label for="photo">Your Photo:<span>required</span></label>
+              <input
+                value="/images/man.webp"
+                type="file"
+                id="photo"
+                name="photo"
+              /> -->
+
+              <label for="fullName">Full Name:<span>required</span></label>
+              <input
+                value="Full Name"
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your and your Father name"
+                required
+              />
+
+              <label for="phone">Phone:<span>required</span></label>
+              <input
+                value="0962202774"
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{10}"
+                placeholder="Enter your valid phone number"
+                required
+              />
+              <label for="email">Email:<span>required</span></label>
+              <input
+                value="example@gmail.com"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your valid email"
+                required
+              />
+
+              <label for="github"
+                >GitHub:<span id="optional">optional</span></label
+              >
+              <input
+                value="www.github.com"
+                type="text"
+                id="github"
+                name="github"
+                placeholder="Enter github Account (if you have)"
+              />
+
+              <label for="linkedin"
+                >LinkedIn:<span id="optional">optional</span></label
+              >
+              <input
+                value="www.linkedin.com"
+                type="text"
+                id="linkedin"
+                name="linkedin"
+                placeholder="Enter Linkedin Account (if you have)"
+              />
+
+              <label for="website"
+                >Website:<span id="optional">optional</span></label
+              >
+              <input
+                value="www.google.com"
+                type="text"
+                id="website"
+                name="website"
+                placeholder="Enter your website address (if you have)"
+              />
+
+              <label for="address">Address:<span>required</span></label>
+              <input
+                value="Addis ababa, Ethiopia"
+                type="text"
+                id="address"
+                name="address"
+                required
+              />
+            </div>
+            <div class="col-md">
+              <label for="university">University:<span>required</span></label>
+              <input
+                value="Haramaya University"
+                type="text"
+                id="university"
+                name="university"
+                required
+                placeholder="Enter your collage or university full name"
+              />
+
+              <label for="field">Field of study:<span>required</span></label>
+              <input
+                value="Information Technology"
+                type="text"
+                id="field"
+                name="field"
+                required
+                placeholder="Enter your Field of Study"
+              />
+
+              <label for="degree">Degree Level:</label>
+              <select id="degree" name="degree">
+                <option value="">BSc</option>
+                <option value="Diploma">Diploma</option>
+                <option value="BSc">BSc</option>
+                <option value="BA">BA</option>
+                <option value="PhD">PhD</option>
+              </select>
+
+              <label for="entryYear">Entry Year:<span>required</span></label>
+              <input
+                value="09/24/2019"
+                type="date"
+                id="entryYear"
+                name="entryYear"
+                required
+              />
+
+              <label for="graduationDate"
+                >Graduation Date:<span>required</span></label
+              >
+              <input
+                value="02/02/2024"
+                type="date"
+                id="graduationDate"
+                name="graduationDate"
+                required
+              />
+              <div class="score">
+                <div>
+                  <label for="cgpa">CGPA:<span>required</span></label>
+                  <input
+                    value="4.0"
+                    type="text"
+                    id="cgpa"
+                    name="cgpa"
+                    required
+                    placeholder="Enter CGPA"
+                  />
+                </div>
+                <div>
+                  <label for="exitExamScore"
+                    >Exit Exam :<span id="optional">optional</span></label
+                  >
+                  <input
+                    value="85"
+                    type="text"
+                    id="exitExamScore"
+                    name="exitExamScore"
+                    placeholder="Enter your exit score(if you have)"
+                  />
+                </div>
+              </div>
+
+              <label for="skills"
+                >Skills (comma-separated):<span>required</span></label
+              >
+              <input
+                value="Website development, Mobile development ,Networking ,Computer maintenance , Problem solving ,project management ,"
+                type="text"
+                id="skills"
+                name="skills"
+                required
+                placeholder="Enter your Skills and separate with comma"
+              />
+
+              <label for="languages"
+                >Languages (comma-separated):<span>required</span></label
+              >
+              <input
+                value="Amharic, English, French"
+                type="text"
+                id="languages"
+                name="languages"
+                required
+                placeholder="Enter your spoken languages "
+              />
+            </div>
+
+            <div class="col-md">
+              <label for="aboutMe">About Me:<span>required</span></label>
+              <textarea
+                rows="7"
+                id="aboutMe"
+                name="aboutMe"
+                required
+                maxlength="500"
+                placeholder="Express yourself with lower than 501 characters...  Example(for fresh graguats): I am Information Technology graduate from Haramaya University  with solid background in Networking concepts, Computer maintenance, website and Mobile app development. I have practical skill in mobile app development with flutter And I am seeking opportunity to get practical knowledge specially on software development................ "
+              >
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis impedit fuga nisi aut, obcaecati accusantium praesentium sint mollitia. Nemo officiis autem blanditiis temporibus modi eveniet expedita eius ipsum a commodi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore officia cum doloribus magni dolorem assumenda earum libero quaerat, rerum sed perspiciatis at aspernatur impedit recusandae perferendis quo nesciunt, adipisci repellat.Lorem, ipsum dolor sit amet consectetur adipisicing elit</textarea
+              >
+              <div id="aboutMeCounter">500 characters remaining</div>
+              <div id="experiencesContainer">
+                <label style="font-size: larger; font-weight: 400"
+                  >Experiences:</label
+                >
+                <button
+                  id="experience-btn"
+                  type="button"
+                  onclick="addExperience(this)"
+                >
+                  Add Experience
+                </button>
+              </div>
+
+              <div id="certeficateContainer">
+                <label style="font-size: larger; font-weight: 400"
+                  >Certeficate</label
+                >
+                <button
+                  id="certeficate-btn"
+                  type="button"
+                  class="add-certeficate"
+                  onclick="addCerteficate(this)"
+                >
+                  Add certeficate
+                </button>
+              </div>
+
+              <div id="referencesContainer">
+                <label style="font-size: larger; font-weight: 400"
+                  >References: <span style="font-size: 10px">required</span>
+                </label>
+                <ul id="referenceList"></ul>
+                <button
+                  id="reference-btn"
+                  type="button"
+                  onclick="addReference(this)"
+                >
+                  Add Reference
+                </button>
+              </div>
+              <br />
+            </div>
+          </form>
+          <button style="margin: 20px" type="button" onclick="generateCV()">
+            GENERATE CV
+          </button>
+        </div>
+      </div>
+
+      <div id="cvPreview" class="cv-preview"></div>
+      <button id="themeToggle" style="display: none">Toggle Theme</button>
+      <span
+        id="description"
+        style="
+          display: none;
+          font-size: 14px;
+          margin: 20px;
+          padding: 20px;
+          color: black;
+          font-family: 'Times New Roman', Times, serif;
+        "
+      >
+        The file with pdf format has around 13 MB size. If you want to commpress
+        to lower size <strong>First Download </strong> then
+        <a href="https://www.ilovepdf.com/compress_pdf">CLICK HERE</a> and
+        select it from your file
+      </span>
+
+      <div class="download-btn">
+        <button id="downloadPDF" onclick="downloadPDF()" style="display: none">
+          Download PDF
+        </button>
+        <button
+          id="downloadImage"
+          onclick="downloadImage()"
+          style="display: none"
+        >
+          Download Image
+        </button>
+      </div>
+    </div>
+
+    <div class="footer ">
+      <h4>Developer Contacts</h4>
+      <div class="footer-icons">
+        <a href="https://github.com/Tafess" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/tafesbelaygbaw/" target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://t.me/tafe1221" target="_blank"
+          ><i class="fab fa-telegram"></i
+        ></a>
+        <a href="https://tafesbelay.netlify.app" target="_blank"
+          ><i class="fas fa-globe"></i
+        ></a>
+        <a href="mailto:tafessebelay62@gmail.com"
+          ><i class="fas fa-envelope"></i
+        ></a>
+        <a href="tel:+251962202774"><i class="fas fa-phone"></i></a>
+      </div>
+      <p>Copyright ©2024 Tafe,All rights reserved</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="cv_generator.js"></script>
+  </body>
+</html>
