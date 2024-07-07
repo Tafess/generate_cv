@@ -2,6 +2,17 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+//===================================Snack bar================================//
+
+function showSnackbar(message) {
+  const snackbar = document.getElementById("snackbar");
+  snackbar.innerText = message;
+  snackbar.className = "show";
+  setTimeout(() => {
+    snackbar.className = snackbar.className.replace("show", "");
+  }, 3000);
+}
+
 //==========================Photo======================================//
 document.getElementById("photo").addEventListener("change", function () {
   const file = this.files[0];
@@ -67,7 +78,9 @@ function addExperience(button) {
   const experiencesContainer = document.getElementById("experiencesContainer");
 
   if (experienceCount > 0 && !validateExperienceInputs()) {
-    alert("Fill all the required inputs");
+    showSnackbar(
+      "Please fill out all required fields for the current experiance."
+    );
     return;
   }
 
@@ -79,7 +92,7 @@ function addExperience(button) {
   }
 
   if (experienceCount >= 2) {
-    alert("You reached the limit. Only 2 experiences are allowed");
+    showSnackbar("You reached the limit. Only 2 experiences are allowed");
     return;
   }
 
@@ -138,7 +151,9 @@ function addCerteficate(button) {
   const certeficateContainer = document.getElementById("certeficateContainer");
 
   if (certeficateCount > 0 && !validateCerteficateInputs()) {
-    alert("Please fill out all required fields for the current certificate.");
+    showSnackbar(
+      "Please fill out all required fields for the current certificate."
+    );
     return;
   }
 
@@ -150,7 +165,9 @@ function addCerteficate(button) {
   }
 
   if (certeficateCount >= 3) {
-    alert("You have reached the limit. Only 3 certificates are allowed.");
+    showSnackbar(
+      "You have reached the limit. Only 3 certificates are allowed."
+    );
     return;
   }
 
@@ -203,7 +220,7 @@ function addReference(button) {
   const referencesContainer = document.getElementById("referencesContainer");
 
   if (referenceCount > 0 && !validateReferenceInputs()) {
-    alert("Fill all the required inputs");
+    showSnackbar("Fill all the required inputs");
     return;
   }
 
@@ -215,7 +232,7 @@ function addReference(button) {
   }
 
   if (referenceCount >= 4) {
-    alert("You reached the maximum limit of 4 references");
+    showSnackbar("You reached the maximum limit of 4 references");
     return;
   }
 
@@ -283,7 +300,7 @@ function validateForm() {
 //============================================================================//
 function generateCV() {
   if (!validateForm()) {
-    alert("Please fill out all required fields correctly.");
+    showSnackbar("Please fill out all required fields correctly.");
     return;
   }
 
