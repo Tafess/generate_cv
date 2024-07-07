@@ -89,15 +89,15 @@ function addExperience(button) {
 
   experienceDiv.innerHTML = `
     <label style=" font-size:16px;font-weight:600;color:blue;">Added Experience ${experienceCount}</label>
-    <input value="Addis ababa university" type="text" placeholder="Organization name where you (was) work" class="experience-organization" >
-    <input value="IT officer" type="text" placeholder="What was your specific role" class="experience-role" >
-    <textarea placeholder="Enter role description with less than 150 characters" class="experience-description" maxLength=150 >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis impedit fuga nisi aut, obcaecati accusantium praesentium sint mollitia. Nemo offici</textarea>
+    <input  type="text" placeholder="Organization name where you (was) work" class="experience-organization" >
+    <input  type="text" placeholder="What was your specific role" class="experience-role" >
+    <textarea placeholder="Enter role description with less than 150 characters" class="experience-description" maxLength=150 ></textarea>
     <label for="start">Work start date:</label>
-    <input value="01/07/2020" type="date" name="start" placeholder="Work start date" class="experience-start" max="${
+    <input type="date" name="start" placeholder="Work start date" class="experience-start" max="${
       new Date().toISOString().split("T")[0]
     }" >
     <label for="end">Work end date:</label>
-    <input value="01/07/2024" type="date" name="end" placeholder="Work end date" class="experience-end" max="${
+    <input  type="date" name="end" placeholder="Work end date" class="experience-end" max="${
       new Date().toISOString().split("T")[0]
     }" ><br>
   `;
@@ -160,10 +160,10 @@ function addCerteficate(button) {
 
   certeficateDiv.innerHTML = `
     <label style="font-size: 16px; font-weight: 600; color: blue;">Added Certificate ${certeficateCount}</label>
-    <input value="CCNA" type="text" placeholder="Enter Certificate name" class="certeficate-name">
-    <input value="Cisco" type="text" placeholder="From which Organization" class="certeficate-doner">
-    <input value="Course Finished" type="text" placeholder="What was the case" class="certeficate-case">
-    <input value="2022-06-09" type="date" placeholder="When did you receive it" class="certeficate-time" max="${
+    <input  type="text" placeholder="Enter Certificate name" class="certeficate-name">
+    <input  type="text" placeholder="From which Organization" class="certeficate-doner">
+    <input  type="text" placeholder="What was the case" class="certeficate-case">
+    <input  type="date" placeholder="When did you receive it" class="certeficate-time" max="${
       new Date().toISOString().split("T")[0]
     }">
   `;
@@ -225,10 +225,10 @@ function addReference(button) {
 
   referenceDiv.innerHTML = `
     <label style=" font-size:16px;font-weight:600;color:blue;">Added Reference ${referenceCount}</label>
-    <input value="Someone" type="text" placeholder="Enter reference person name" class="reference-name" >
-    <input value="someone@gmail.com" type="email" placeholder="Enter reference email" class="reference-email" >
-    <input value="0900000000" type="tel" placeholder="Enter reference valid phone" class="reference-phone" pattern="[0-9]{10}" >
-    <input value="Lecturer at Haramaya University" type="text" placeholder="Enter reference work organization and role" class="reference-work" >
+    <input  type="text" placeholder="Enter reference person name" class="reference-name" >
+    <input type="email" placeholder="Enter reference email" class="reference-email" >
+    <input  type="tel" placeholder="Enter reference valid phone" class="reference-phone" pattern="[0-9]{10}" >
+    <input  type="text" placeholder="Enter reference work organization and role" class="reference-work" >
   `;
 
   referencesContainer.insertBefore(referenceDiv, button);

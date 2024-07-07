@@ -5,7 +5,7 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .body {
-  background-image: url(/images/image1.jpg);
+  background-image: url(image1.jpg);
   padding: 200px;
 }
 .navbar {
@@ -30,7 +30,7 @@
   margin-top: 50px;
   align-items: end;
   margin-bottom: 20px;
-  background-image: url("/images/image3.jpg");
+  background-image: url("image3.jpg");
   /* background: linear-gradient(
     45deg,
     transparent,
@@ -164,7 +164,7 @@ p {
 }
 /* Footer CSS */
 .footer {
-  background-image: url("/images/image1.jpg");
+  background-image: url("image1.jpg");
   background-size: contain;
   color: white;
   min-height: 200px;
