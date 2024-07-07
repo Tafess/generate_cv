@@ -1,1 +1,1 @@
-﻿# generet_cv
+﻿# generate_cv
