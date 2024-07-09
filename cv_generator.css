@@ -394,7 +394,7 @@ p {
 
 .skills ul,
 .languages ul {
-  list-style-type: none;
+  list-style-type: circle;
   padding-left: 0;
   color: var(--list-color);
 }
@@ -501,7 +501,7 @@ p {
   padding-left: 10px;
   padding-right: 10px;
   border-bottom: 1px solid #555;
-  text-align: center;
+  text-align: justify;
   letter-spacing: 1px;
   border-radius: 10px;
   /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.7); */
