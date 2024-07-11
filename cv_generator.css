@@ -338,7 +338,7 @@ p {
   width: 210mm;
   height: 297mm;
   margin: auto;
-  padding: 0 30px 0 0;
+  padding: 0 0 0 0;
   border-radius: 50px;
   background: var(--background-color);
   color: var(--text-color);
@@ -347,9 +347,9 @@ p {
 }
 
 .left-column {
-  width: 33%;
+  width: 35%;
   height: 100%;
-  padding: 50px 10px 10px 30px;
+  padding: 50px 0 0 30px;
   background: var(--accent-color);
   border-radius: 20px 0 30px 0;
   color: var(--list-color);
@@ -363,12 +363,21 @@ p {
 .education,
 .skills,
 .languages {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .education p {
   font-size: 12px;
+}
+
+.education p::before {
+  content: "🎓";
+  background: white;
+  font-size: 8px;
+  padding: 3px;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
 .photo img {
@@ -380,23 +389,24 @@ p {
 }
 
 .left-column .contact span {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--list-color);
 }
 
 .left-column .contact img {
   background: white;
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   padding: 3px;
   border-radius: 50%;
 }
 
 .skills ul,
 .languages ul {
-  list-style-type: circle;
+  list-style-type: none;
   padding-left: 0;
   color: var(--list-color);
+  /* margin-left: 15px; */
 }
 
 .skills ul li,
@@ -407,7 +417,20 @@ p {
   font-size: 12px;
   color: var(--list-color);
 }
+ul li:before {
+  background: white;
+  font-size: 8px;
+  padding: 3px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
 
+.skills ul li::before {
+  content: "🖊️";
+}
+.languages ul li::before {
+  content: "🌍";
+}
 .right-column {
   width: 67%;
   height: 100%;
@@ -448,6 +471,61 @@ p {
   margin-bottom: 2px;
   box-sizing: border-box;
 }
+
+/* .experienceList,
+.certeficatelist,
+.referenceList,
+ul li {
+  list-style: circle;
+} */
+.experienceList,
+.certificateList,
+.referenceList {
+  margin-top: 20px;
+}
+.experienceList ul,
+.certificateList ul,
+.referenceList ul {
+  list-style-type: decimal;
+  padding: 0;
+}
+.experienceList li,
+.certificateList li,
+.referenceList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.experienceList li i,
+.certificateList li i,
+.referenceList li i {
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+/* 
+.referenceList {
+  list-style: none;
+  padding: 0;
+}
+
+.referenceList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.editIcon {
+  cursor: pointer;
+} */
+/* .experienceList,
+.certeficatelist,
+.referenceList,
+ul li span i {
+  margin-left: 30px;
+} */
 
 .references {
   bottom: 30px;
@@ -511,13 +589,16 @@ p {
 
 .card p::before {
   content: "🌹";
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
+  margin-right: 6px;
+  font-style: normal;
 }
 
 .card span {
   color: black;
   margin-left: 20px;
+  
   font-size: 12px;
   font-style: normal;
   font-family: "Times New Roman", Times, serif;

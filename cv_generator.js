@@ -2,6 +2,9 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+function capitalizeName(string) {
+  return string.toUpperCase();
+}
 //===================================Snack bar================================//
 
 function showSnackbar(message) {
@@ -10,7 +13,7 @@ function showSnackbar(message) {
   snackbar.className = "show";
   setTimeout(() => {
     snackbar.className = snackbar.className.replace("show", "");
-  }, 3000);
+  }, 5000);
 }
 
 //==========================Photo======================================//
@@ -20,7 +23,7 @@ document.getElementById("photo").addEventListener("change", function () {
     const reader = new FileReader();
     reader.onload = function (e) {
       document.getElementById("photoPreview").innerHTML = `
-        <img src="${e.target.result}" alt="Selected Photo" width="150" height="150" />
+        <img src="${e.target.result}" alt="Selected Photo" width="100" height="100" />
       `;
     };
     reader.readAsDataURL(file);
@@ -307,7 +310,7 @@ function generateCV() {
   const form = document.getElementById("cvForm");
   const cvPreview = document.getElementById("cvPreview");
 
-  const fullName = capitalizeFirstLetter(form.fullName.value);
+  const fullName = capitalizeName(form.fullName.value);
   const skills = form.skills.value
     .split(",")
     .map((skill) => `<li>${capitalizeFirstLetter(skill.trim())}</li>`)
@@ -523,6 +526,7 @@ function generateCV() {
     document.getElementById("downloadImage").style.display = "block";
     document.getElementById("description").style.display = "block";
   }
+  saveToLocalStorage();
 }
 
 //=============================DOWNLOAD===============================================
@@ -607,3 +611,54 @@ window.addEventListener("scroll", function () {
     navLinks.forEach((link) => (link.style.color = "#000"));
   }
 });
+
+// To save and display form data for future update
+const inputIds = [
+  "fullName",
+  "phone",
+  "email",
+  "github",
+  "linkedin",
+  "website",
+  "address",
+  "university",
+  "field",
+  "cgpa",
+  "exitExamScore",
+  "degree",
+  "entryYear",
+  "graduationDate",
+  "aboutMe",
+  "skills",
+  "languages",
+];
+
+function getFormData() {
+  const formData = {};
+  inputIds.forEach((id) => {
+    formData[id] = document.getElementById(id).value;
+  });
+  return formData;
+}
+
+function setFormData(formData) {
+  inputIds.forEach((id) => {
+    if (formData[id]) {
+      document.getElementById(id).value = formData[id];
+    }
+  });
+}
+
+function saveToLocalStorage() {
+  const formData = getFormData();
+  localStorage.setItem("formData", JSON.stringify(formData));
+}
+
+function displayInfo() {
+  const formData = JSON.parse(localStorage.getItem("formData"));
+  if (formData) {
+    setFormData(formData);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", displayInfo);

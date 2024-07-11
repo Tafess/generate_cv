@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg text-light fixed-top">
       <div>
         <a class="navbar-brand" href="#">GENERATE YOUR CV</a>
-        <button
+        <!-- <button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -30,7 +30,7 @@
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
       </div>
       <div></div>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -191,7 +191,7 @@
 
               <label for="degree">Degree Level:</label>
               <select id="degree" name="degree">
-                <option value="">BSc</option>
+                <option value="">Select level</option>
                 <option value="Diploma">Diploma</option>
                 <option value="BSc">BSc</option>
                 <option value="BA">BA</option>
@@ -272,6 +272,7 @@
                 <label style="font-size: larger; font-weight: 400"
                   >Experiences:</label
                 >
+                <div class="experienceList"></div>
                 <button
                   id="experience-btn"
                   type="button"
@@ -285,6 +286,20 @@
                 <label style="font-size: larger; font-weight: 400"
                   >Certificate</label
                 >
+                <div class="certificateList">
+                  <ul>
+                    <li>
+                      Manager at Organization
+                      <span
+                        ><i
+                          class="fa-solid fa-edit"
+                          onclick=""
+                          style="font-size: 20px"
+                        ></i
+                      ></span>
+                    </li>
+                  </ul>
+                </div>
                 <button
                   id="certeficate-btn"
                   type="button"
@@ -299,7 +314,7 @@
                 <label style="font-size: larger; font-weight: 400"
                   >References: <span style="font-size: 10px">required</span>
                 </label>
-                <ul id="referenceList"></ul>
+                <div id="referenceList"></div>
                 <button
                   id="reference-btn"
                   type="button"
@@ -318,7 +333,7 @@
       </div>
 
       <div id="cvPreview" class="cv-preview"></div>
-      <button id="themeToggle" style="display: none">Toggle Theme</button>
+      <button id="themeToggle" style="display: none">Change color</button>
       <span
         id="description"
         style="
