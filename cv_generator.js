@@ -437,7 +437,7 @@ function generateCV() {
   </div>`
       : "";
 
-    const exit_score_value = form.website.value
+    const exit_score_value = form.exitExamScore.value
       ? `
   <div>
     
